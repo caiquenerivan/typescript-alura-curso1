@@ -1,13 +1,17 @@
 import { Negociacao } from "./negociacao.js";
 
 export class Negociacoes{
-    private negociacoes: Array<Negociacao>= [];
+
+    // Array de Negociação, pode ser declarada como Array<Negociacao> ou como está abaixo
+    private negociacoes: Negociacao[]= [];
 
     adiciona(negociacao: Negociacao){
         this.negociacoes.push(negociacao);
     }
     
-    lista():ReadonlyArray<Negociacao>{
+    // Retorna um array de apenas leitura do tipo Negociação, 
+    // pode ser declarada como ReadonlyArray <Negociacao> ou como está abaixo
+    lista():readonly Negociacao[]{
         return this.negociacoes;
     }
 }
